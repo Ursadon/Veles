@@ -13,22 +13,31 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.coocox.welcome.ui.WelcomePage" name="" partName="welcome" title="welcome" tooltip="" workbook="DefaultEditorWorkbook">
-<input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">
-<org.coocox.welcome.ui.WelcomePage/>
+<input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">&#x0A;<org.coocox.welcome.ui.WelcomePage/>
 </input>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="F:/Dropbox/Priv/Projects/Veles/main.c" title="main.c" tooltip="F:/Dropbox/Priv/Projects/Veles/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Veles/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4429" selectionTopPixel="2026"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="3436" selectionTopPixel="1859"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="FreeRTOSConfig.h" partName="FreeRTOSConfig.h" path="F:/Dropbox/Priv/Projects/Veles/FreeRTOS/include/FreeRTOSConfig.h" title="FreeRTOSConfig.h" tooltip="F:/Dropbox/Priv/Projects/Veles/FreeRTOS/include/FreeRTOSConfig.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Veles/FreeRTOS/include/FreeRTOSConfig.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.c" partName="LCD.c" path="F:/Dropbox/Priv/Projects/Veles/LCD5110/LCD.c" title="LCD.c" tooltip="F:/Dropbox/Priv/Projects/Veles/LCD5110/LCD.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Veles/LCD5110/LCD.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2005" selectionTopPixel="1534"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="font.h" partName="font.h" path="F:/Dropbox/Priv/Projects/Veles/LCD5110/font.h" title="font.h" tooltip="F:/Dropbox/Priv/Projects/Veles/LCD5110/font.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Veles/LCD5110/font.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="4832" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -38,7 +47,7 @@
 </viewState>
 </view>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="1" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="30">
+<viewState CommonNavigator.LINKING_ENABLED="1" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="22">
 <expanded>
 <element path="/Veles"/>
 <element path="/Veles/cmsis"/>
@@ -46,6 +55,7 @@
 <element path="/Veles/cmsis_boot/startup"/>
 <element path="/Veles/FreeRTOS"/>
 <element path="/Veles/FreeRTOS/include"/>
+<element path="/Veles/LCD5110"/>
 <element path="/Veles/stm_lib"/>
 <element path="/Veles/stm_lib/inc"/>
 <element path="/Veles/stm_lib/src"/>
@@ -108,8 +118,13 @@
 <view id="org.coocox.component.ui.ComponentView"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
 <view id="org.coocox.component.ui.Help"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@1e875f3" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
+<fastViews>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.2996812"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@ad9d3d">
@@ -127,11 +142,9 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1e875f3" ratio="0.6992561" ratioLeft="658" ratioRight="283" relationship="4" relative="org.eclipse.ui.internal.ViewStack@ad9d3d">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.coocox.builder.ui.exampleView" ratio="0.21966527" ratioLeft="420" ratioRight="1492" relationship="2" relative="org.eclipse.ui.internal.ViewStack@ad9d3d"/>
@@ -258,10 +271,6 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/F100-RTOS/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/F100-RTOS/cmsis_boot/startup/startup_stm32f10x_md_vl.c"/>
-<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="F:\dev\gcc-arm\4.6_2013q1\arm-none-eabi\include\string.h" project="F100-RTOS"/>
-<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="F:\dev\gcc-arm\4.6_2013q1\arm-none-eabi\include\stdio.h" project="F100-RTOS"/>
 <editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage">
 <org.coocox.welcome.ui.WelcomePage/>
 </editor>
@@ -287,134 +296,140 @@
 <subPage/>
 </editor>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Veles/LCD/hd44780.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Veles/LCD5110/LCD.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Veles/stm_lib/inc/stm32f10x_gpio.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Veles/LCD5110/LCD.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Veles/LCD5110/font.h"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="226" y="0"/>
-</item>
-<item historyLabel="string.h" index="2">
-<position info="not_deleted" x="6" y="6"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="247" y="0"/>
-</item>
-<item historyLabel="stdio.h" index="3">
-<position info="not_deleted" x="284" y="4"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="247" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4214" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4222" y="0"/>
-</item>
-<item historyLabel="startup_stm32f10x_md_vl.c" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4775" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4176" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4214" y="0"/>
-</item>
-<item historyLabel="startup_stm32f10x_md_vl.c" index="1">
-<position info="not_deleted" x="10214" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4775" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4176" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4182" y="8"/>
-</item>
-<item historyLabel="stdio.h" index="3">
-<position info="not_deleted" x="8713" y="113"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4182" y="8"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4191" y="16"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="307" y="4"/>
-</item>
-<item historyLabel="welcome" index="4"/>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="316" y="0"/>
 </item>
-<item historyLabel="Repository" index="6"/>
-<item historyLabel="welcome" index="4"/>
-<item historyLabel="main.c" index="5">
+<item historyLabel="Repository" index="2"/>
+<item historyLabel="welcome" index="0"/>
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="316" y="0"/>
 </item>
-<item historyLabel="Repository" index="7"/>
-<item historyLabel="Configuration" index="8"/>
-<item historyLabel="Repository" index="7"/>
-<item historyLabel="main.c" index="5">
+<item historyLabel="Repository" index="3"/>
+<item historyLabel="Configuration" index="4"/>
+<item historyLabel="Repository" index="3"/>
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="182" y="0"/>
 </item>
-<item historyLabel="FreeRTOS.h" index="9">
+<item historyLabel="FreeRTOS.h" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="182" y="0"/>
 </item>
-<item historyLabel="FreeRTOSConfig.h" index="10">
+<item historyLabel="FreeRTOSConfig.h" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="3687" y="0"/>
 </item>
-<item historyLabel="Repository" index="7"/>
-<item historyLabel="main.c" index="5">
+<item historyLabel="Repository" index="3"/>
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="3687" y="0"/>
 </item>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="3757" y="0"/>
 </item>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position/>
 </item>
-<item historyLabel="stm32f10x_rcc.c" index="11">
+<item historyLabel="stm32f10x_rcc.c" index="7">
 <position info="not_deleted" x="37882" y="22"/>
 </item>
-<item historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4008" y="0"/>
 </item>
-<item historyLabel="hd44780_driver.c" index="12">
+<item historyLabel="hd44780_driver.c" index="8">
 <position info="not_deleted" x="15" y="0"/>
 </item>
-<item historyLabel="hd44780_driver.h" index="13">
+<item historyLabel="hd44780_driver.h" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="hd44780_driver.c" index="12">
+<item historyLabel="hd44780_driver.c" index="8">
 <position info="not_deleted" x="935" y="13"/>
 </item>
-<item historyLabel="welcome" index="14"/>
-<item historyLabel="Repository" index="15"/>
-<item historyLabel="main.c" index="5">
+<item historyLabel="welcome" index="10"/>
+<item historyLabel="Repository" index="11"/>
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4006" y="0"/>
 </item>
-<item historyLabel="hd44780_driver.c" index="12">
+<item historyLabel="hd44780_driver.c" index="8">
 <position info="not_deleted" x="133" y="8"/>
 </item>
-<item historyLabel="Repository" index="15"/>
-<item historyLabel="hd44780.c" index="16">
+<item historyLabel="Repository" index="11"/>
+<item historyLabel="hd44780.c" index="12">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Repository" index="15"/>
-<item historyLabel="hd44780_driver.c" index="12">
+<item historyLabel="Repository" index="11"/>
+<item historyLabel="hd44780_driver.c" index="8">
 <position info="not_deleted" x="133" y="8"/>
 </item>
-<item active="true" historyLabel="main.c" index="5">
+<item historyLabel="main.c" index="1">
 <position info="not_deleted" x="4006" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="235" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="238" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="4374" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="3307" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="4009" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="40" y="0"/>
+</item>
+<item historyLabel="stm32f10x_gpio.h" index="14">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="70" y="0"/>
+</item>
+<item historyLabel="LCD.h" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="571" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="4426" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="571" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="1618" y="0"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="1035" y="22"/>
+</item>
+<item historyLabel="font.h" index="16">
+<position info="not_deleted" x="0" y="4832"/>
+</item>
+<item historyLabel="LCD.c" index="13">
+<position info="not_deleted" x="2005" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="4426" y="0"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="3967" y="10"/>
+</item>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="1745" y="10"/>
+</item>
+<item active="true" historyLabel="main.c" index="1">
+<position/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -423,6 +438,18 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="font.h" tooltip="Veles/LCD5110/font.h">
+<persistable path="/Veles/LCD5110/font.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.h" tooltip="Veles/LCD5110/LCD.h">
+<persistable path="/Veles/LCD5110/LCD.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f10x_gpio.h" tooltip="Veles/stm_lib/inc/stm32f10x_gpio.h">
+<persistable path="/Veles/stm_lib/inc/stm32f10x_gpio.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD.c" tooltip="Veles/LCD5110/LCD.c">
+<persistable path="/Veles/LCD5110/LCD.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hd44780.c" tooltip="Veles/LCD/hd44780.c">
 <persistable path="/Veles/LCD/hd44780.c"/>
 </file>
@@ -456,18 +483,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f10x_md_vl.c" tooltip="F100-RTOS/cmsis_boot/startup/startup_stm32f10x_md_vl.c">
 <persistable path="/F100-RTOS/cmsis_boot/startup/startup_stm32f10x_md_vl.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="tasks.c" tooltip="F100-RTOS/FreeRTOS/tasks.c">
-<persistable path="/F100-RTOS/FreeRTOS/tasks.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="port.c" tooltip="F100-RTOS/FreeRTOS/port.c">
-<persistable path="/F100-RTOS/FreeRTOS/port.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="syscalls.c" tooltip="F100-RTOS/syscalls/syscalls.c">
-<persistable path="/F100-RTOS/syscalls/syscalls.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="FreeRTOSConfig.h" tooltip="F100-RTOS/FreeRTOS/include/FreeRTOSConfig.h">
-<persistable path="/F100-RTOS/FreeRTOS/include/FreeRTOSConfig.h"/>
 </file>
 </mruList>
 </workbench>

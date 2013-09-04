@@ -4,13 +4,9 @@
 #include "stm32f10x_usart.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_flash.h"
-#include "hd44780_driver.h"
 #include "FreeRTOS.h"
 #include "task.h"
-
-#define RS GPIO_Pin_12
-#define RW GPIO_Pin_10
-#define E GPIO_Pin_11
+#include "LCD5110/LCD.h"
 
 /***************************************************************************//**
  * @brief Init Clock
@@ -112,16 +108,31 @@ void usartSendStr(char *str) {
 	}
 }
 
-void vTask(void *pvParameters) {
+void vKeyScan(void *pvParameters) {
+	unsigned int usart_rx_buff = 0x00;
 	for (;;) {
-		GPIO_SetBits(GPIOC, GPIO_Pin_8);
-		vTaskDelay(200);
-		GPIO_SetBits(GPIOC, GPIO_Pin_9);
-		vTaskDelay(200);
-		GPIO_ResetBits(GPIOC, GPIO_Pin_8);
-		vTaskDelay(200);
-		GPIO_ResetBits(GPIOC, GPIO_Pin_9);
-		vTaskDelay(200);
+		if ((USART1->SR & USART_FLAG_RXNE) != (u16) RESET) {
+			usart_rx_buff = USART_ReceiveData(USART1);
+			switch (usart_rx_buff) {
+				case 0x38: // Key 8 (UP)
+
+					break;
+				case 0x32: // Key 2 (DOWN)
+
+					break;
+				case 0x34: // Key 4 (LEFT)
+
+					break;
+				case 0x36: // Key 6 (RIGHT)
+
+					break;
+				case 0x35: // Key 5 (OK)
+
+					break;
+				default:
+					break;
+			}
+		}
 	}
 }
 
@@ -129,25 +140,21 @@ int main(void)
 {
 	SetSysClockTo24();
 	SetupUSART();
-	SetupLED();
-	uint8_t user_char[8]; //Сюда будем записывать пользовательский символ
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE); //Вкл порт С
-	lcd_init(); //Инициализируем дисплей
-	user_char[0]=0b01110; //А вот тут
-	user_char[1]=0b10001; // рисуем
-	user_char[2]=0b10001; // наш символ
-	user_char[3]=0b10001; //
-	user_char[4]=0b10001; // Это типа рыба :-)
-	user_char[5]=0b01010;
-	user_char[6]=0b10001;
-	user_char[7]=0b10001;
-	//lcd_set_user_char(0, user_char); // Наша рыба это символ номер ноль
-	lcd_out(" This is fish"); //Выводим надпись в нулевую строку
-	lcd_set_xy(0,1); //переводим курсор в первую строку
-	//lcd_send(0,DATA); //Выводим символ номер ноль
-	lcd_set_state(LCD_ENABLE, CURSOR_ENABLE, BLINK); //Включаем курсор и мигалку
-
-	xTaskCreate( vTask, ( signed char * ) "vTask",
+	//SetupLED();
+	LCD5110_init();
+	LCD5110_set_XY(0,0);
+	LCD5110_write_string(">1. Hello");
+	LCD5110_set_XY(0,1);
+	LCD5110_write_string(" 2. Hello");
+	LCD5110_set_XY(0,2);
+	LCD5110_write_string(" 3. Hello");
+	LCD5110_set_XY(0,3);
+	LCD5110_write_string(" 4. Hello");
+	LCD5110_set_XY(0,4);
+	LCD5110_write_string(" 5. Hello");
+	LCD5110_set_XY(0,5);
+	LCD5110_write_string(" 6. Hello");
+	xTaskCreate( vKeyScan, ( signed char * ) "vTask",
 			configMINIMAL_STACK_SIZE, NULL, 0, ( xTaskHandle * ) NULL);
 	vTaskStartScheduler();
 	return 0;
