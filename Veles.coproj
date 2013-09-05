@@ -102,8 +102,8 @@
     <File name="FreeRTOS/heap_2.c" path="FreeRTOS/heap_2.c" type="1"/>
     <File name="FreeRTOS/include/StackMacros.h" path="FreeRTOS/include/StackMacros.h" type="1"/>
     <File name="FreeRTOS/include/task.h" path="FreeRTOS/include/task.h" type="1"/>
-    <File name="FreeRTOS/include/queue.h" path="FreeRTOS/include/queue.h" type="1"/>
     <File name="cmsis/core_cm3.h" path="cmsis/core_cm3.h" type="1"/>
+    <File name="FreeRTOS/include/queue.h" path="FreeRTOS/include/queue.h" type="1"/>
     <File name="LCD5110/LCD.h" path="LCD5110/LCD.h" type="1"/>
     <File name="stm_lib/src/stm32f10x_rcc.c" path="stm_lib/src/stm32f10x_rcc.c" type="1"/>
     <File name="FreeRTOS/tasks.c" path="FreeRTOS/tasks.c" type="1"/>
@@ -111,8 +111,8 @@
     <File name="FreeRTOS/include/list.h" path="FreeRTOS/include/list.h" type="1"/>
     <File name="FreeRTOS/include/projdefs.h" path="FreeRTOS/include/projdefs.h" type="1"/>
     <File name="FreeRTOS/include/portable.h" path="FreeRTOS/include/portable.h" type="1"/>
-    <File name="FreeRTOS/include" path="" type="2"/>
     <File name="FreeRTOS/include/timers.h" path="FreeRTOS/include/timers.h" type="1"/>
+    <File name="FreeRTOS/include" path="" type="2"/>
     <File name="stm_lib/src" path="" type="2"/>
     <File name="cmsis" path="" type="2"/>
     <File name="stm_lib" path="" type="2"/>
