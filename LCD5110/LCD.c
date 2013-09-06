@@ -8,20 +8,34 @@ void LCD5110_LCD_write_byte(unsigned char dat,unsigned char LCD5110_MOde);
 void LCD5110_LCD_delay_ms(unsigned int t);
 
 //Define the hardware operation function
-void LCD5110_GPIO_Config(void);
 void LCD5110_SCK(unsigned char temp);
 void LCD5110_MO(unsigned char temp);
 void LCD5110_CS(unsigned char temp);
 void LCD5110_RST(unsigned char temp);
 void LCD5110_DC(unsigned char temp);
 
-
-
-
-
 void LCD5110_init()
 {
-	LCD5110_GPIO_Config();
+	GPIO_InitTypeDef GPIOA_Init;
+	GPIO_InitTypeDef GPIOC_Init;
+	
+	GPIOA_Init.GPIO_Pin = GPIO_Pin_8;
+	GPIOA_Init.GPIO_Speed = GPIO_Speed_10MHz;
+	GPIOA_Init.GPIO_Mode = GPIO_Mode_Out_PP;
+	
+	GPIOC_Init.GPIO_Pin = GPIO_Pin_6|GPIO_Pin_7|GPIO_Pin_8|GPIO_Pin_9;
+	GPIOC_Init.GPIO_Speed = GPIO_Speed_10MHz;
+	GPIOC_Init.GPIO_Mode = GPIO_Mode_Out_PP;
+	
+	RCC_HSICmd(DISABLE);
+	//RCC_PLLConfig(RCC_PLLSource_HSE_Div1,RCC_PLLMul_9);
+	//RCC_PLLCmd(ENABLE);
+	RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
+	
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOC, ENABLE);
+	
+	GPIO_Init(GPIOA,&GPIOA_Init);
+	GPIO_Init(GPIOC,&GPIOC_Init);
 
 	LCD5110_DC(1);//LCD_DC = 1;
 	LCD5110_MO(1);//SPI_MO = 1;
@@ -78,6 +92,7 @@ void LCD5110_write_char(unsigned char c)
 		
 	}
 }
+
 void LCD5110_write_char_reg(unsigned char c)
 {
 	unsigned char line;
@@ -124,7 +139,6 @@ void LCD5110_set_XY(unsigned char X,unsigned char Y)
 
 void LCD5110_Write_Dec(unsigned int b)
 {
-
 	unsigned char datas[3];
 
 	datas[0] = b/1000;
@@ -144,41 +158,13 @@ void LCD5110_Write_Dec(unsigned int b)
 	LCD5110_write_char(datas[1]);
 	LCD5110_write_char(datas[2]);
 	LCD5110_write_char(datas[3]);
-
-	//a++;
 }
 
 void LCD5110_LCD_delay_ms(unsigned int nCount)
 {
-  unsigned long t;
+	unsigned long t;
 	t = nCount * 40000;
 	while(t--);
-}
-
-void LCD5110_GPIO_Config()
-{
-	GPIO_InitTypeDef GPIOA_Init;
-	GPIO_InitTypeDef GPIOC_Init;
-
-	GPIOA_Init.GPIO_Pin = GPIO_Pin_8;
-	GPIOA_Init.GPIO_Speed = GPIO_Speed_10MHz;
-	GPIOA_Init.GPIO_Mode = GPIO_Mode_Out_PP;
-
-
-	GPIOC_Init.GPIO_Pin = GPIO_Pin_6|GPIO_Pin_7|GPIO_Pin_8|GPIO_Pin_9;
-	GPIOC_Init.GPIO_Speed = GPIO_Speed_10MHz;
-	GPIOC_Init.GPIO_Mode = GPIO_Mode_Out_PP;
-
-	RCC_HSICmd(DISABLE);
-	//RCC_PLLConfig(RCC_PLLSource_HSE_Div1,RCC_PLLMul_9);
-	//RCC_PLLCmd(ENABLE);
-	RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
-
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOC, ENABLE);
-
-	GPIO_Init(GPIOA,&GPIOA_Init);
-	GPIO_Init(GPIOC,&GPIOC_Init);
-
 }
 
 void LCD5110_CS(unsigned char temp)
